@@ -24,29 +24,38 @@ function task3(){
 	
 	let chatItem = document.getElementsByClassName('chat-list-item')
 	
-	task2(chatItem[index])
-		
 	if(index>chatItem.length){
 		return
+	}else{
+		console.log(index,'的')
+		task2(chatItem[index])
 	}
 	
-	index++
-	
-	setTimeout(()=>{
-		task3()
-	},5000)
 }
 function task2(item){
-	item.click()
-	setTimeout(()=>{
-		let chars = document.getElementsByClassName('chat-message')
-		if(chars.length>0){
+	 	let items = document.getElementsByClassName('last-text')
+	 	let obj = items[index].innerHTML
+	 	console.log(obj)
+		if(obj.length>0){
 
+			index++
+			setTimeout(()=>{
+				task3()
+			},100)
+			
 		}else{
-			document.getElementsByClassName('el-textarea__inner')[0].value = '您好，想跟您合作推广，方便留个您的v信。'
-			document.getElementsByClassName('el-textarea__inner')[0].dispatchEvent(new Event('input'))
-			sendMsg()
+			item.click()
+			let chars = document.getElementsByClassName('chat-message')
+			setTimeout(()=>{
+			
+				document.getElementsByClassName('el-textarea__inner')[0].value = '您好，想跟您合作推广，方便留个您的v信。'
+				document.getElementsByClassName('el-textarea__inner')[0].dispatchEvent(new Event('input'))
+				sendMsg()
+				setTimeout(()=>{
+					index++
+					task3()
+				},6000)
+			},1000)
 		}
-	},1000)
 }
 task3()
