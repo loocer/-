@@ -1,7 +1,7 @@
 
 let startNum = 1
-let pageNum =20
-let endPage = 30
+let pageNum =32
+let endPage = 40
 
 
 let itemNum = 0
@@ -65,10 +65,18 @@ function task3(){
 function task4(){
   pageNum++
   let nums = document.getElementsByClassName('number')
-  nums[pageNum].click()
-  if(pageNum<endPage){
-    task2()
+  for(let obj of nums){
+    let text = obj.innerHTML
+      if(text==pageNum){
+           nums[pageNum].click()
+           task2()
+      }
   }
+  // console.log(pageNum,nums[pageNum],'==============')
+ 
+  // if(pageNum<endPage){
+  //   task2()
+  // }
   
 }
 function task0(){
