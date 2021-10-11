@@ -24,12 +24,12 @@ function task3(){
 	
 	let chatItem = document.getElementsByClassName('chat-list-item')
 	
-	if(index>chatItem.length){
-		return
-	}else{
-		console.log(index,'的')
-		task2(chatItem[index])
+	if(index>20){
+		index=0
 	}
+	console.log(index,'的')
+	task2(chatItem[index])
+	
 	
 }
 function task2(item){

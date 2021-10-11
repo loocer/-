@@ -24,7 +24,11 @@
     {
       "matches": [
         "http://www.xingtu.cn/ad/creator/market",
-        "https://www.xingtu.cn/ad/creator/market"
+        "https://www.xingtu.cn/ad/creator/market",
+        "http://www.xingtu.cn/ad/creator/author/douyin/*",
+        "https://www.xingtu.cn/ad/creator/author/douyin/*",
+        "http://www.xingtu.cn/ad/creator/chat",
+        "https://www.xingtu.cn/ad/creator/chat"
       ],
       "js": [
         "scripts/contentscript.js"
